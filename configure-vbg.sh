@@ -14,13 +14,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Configure NeoVim
-curl -fLo ~/.config/nvim/init.vim --create-dirs https://
+curl -fLo ~/.config/nvim/init.vim --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/init.vim
 
 # Configure Vim
-curl -fLo ~/.config/.vimrc --create-dirs https://
+curl -fLo ~/.config/.vimrc --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/.vimrc
 ln -s ~/.config/.vimrc ~/.vimrc
 
 # Configure shell
-curl -fLo ~/.config/.vbgsh --create-dirs https://
+curl -fLo ~/.config/.vbgsh --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/.vbgsh
 
 echo "Ejecuta :PlugInstall y :CocInstall coc-json coc-tsserver al entrar en Vim/NeoVim"
