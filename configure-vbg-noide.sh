@@ -1,26 +1,20 @@
 #!/bin/bash
 
 if [ -n "$(command -v yum)" ]; then 
-  sudo yum install neovim
+  sudo yum install vim
 else
-  sudo apt install neovim
+  sudo apt install vim
 fi
 
-# Install NodeJs
-curl -sL install-node.now.sh/lts | sudo bash
-
-# Install Vim/NeoVim plugin manager
+# Install Vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# Configure NeoVim
-curl -fLo ~/.config/nvim/init.vim --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/init.vim
 
 # Configure Vim
-curl -fLo ~/.config/.vimrc --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/.vimrc
+curl -fLo ~/.config/.vimrc --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/.vimrc-noide
 ln -s ~/.config/.vimrc ~/.vimrc
 
 # Configure shell
 curl -fLo ~/.config/.vbgsh --create-dirs https://raw.githubusercontent.com/vbermudez/vim-dev/master/.vbgsh
+source ~./config/.vbgsh
 
-echo "Ejecuta :PlugInstall y :CocInstall coc-json coc-tsserver al entrar en Vim/NeoVim"
+echo "Ejecuta :PlugInstall al entrar en Vim"
