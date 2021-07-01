@@ -38,6 +38,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
+Plug 'sodapopcan/vim-twiggy'
 
 call plug#end()
 
@@ -48,15 +50,21 @@ let g:gruvbox_contrast_dark = "hard"
 " Close NERDTree on open file
 let NERDTreeQuitOnOpen = 1
 
+" Configure Twiggy
+let g:twiggy_group_locals_by_slash = 0
+let g:twiggy_local_branch_sort = 'mru'
+let g:twiggy_remote_branch_sort = 'date'
+
 " KEY MAPPINGS
 " Set space key as leader key
 let mapleader = " "
 
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
-
+nmap <Leader>t :Twiggy<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+nmap <Leader>g :Git
 
 " coc-vim key mappings
 inoremap <silent><expr> <TAB>
